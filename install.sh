@@ -14,4 +14,5 @@ make_link .vim/colors
 make_link .vim/indent
 make_link .bashrc
 make_link .inputrc
+make_link .xprofile
 make_link .config/fontconfig/fonts.conf

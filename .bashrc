@@ -107,4 +107,4 @@ fi
 
 shopt -s checkwinsize
 
-export LC_COLLATE="en_US.UTF-8"
+export VISUAL="vim"
