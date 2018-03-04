@@ -1,10 +1,17 @@
 #!/bin/bash
 
 DIR=$(dirname $(realpath $0))
-LINKS='.vimrc .vim/colors .vim/indent .bashrc .inputrc .config/fontconfig/fonts.conf'
+[ -z "$DESTDIR" ] && DESTDIR="$HOME"
 
-for i in $LINKS; do
-  mkdir -p "${HOME}/$(dirname $i)"
-  ln --backup=numbered -nsfT "${DIR}/$i" "$HOME/$i"
-done
-
+make_link() {
+  echo "install $1"
+  mkdir -p "$DESTDIR/$(dirname $1)"
+  ln -nsfT "$DIR/$1" "$DESTDIR/$1"
+}
+echo "target directory: $DESTDIR"
+make_link .vimrc
+make_link .vim/colors
+make_link .vim/indent
+make_link .bashrc
+make_link .inputrc
+make_link .config/fontconfig/fonts.conf
