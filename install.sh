@@ -16,3 +16,4 @@ make_link .bashrc
 make_link .inputrc
 make_link .xprofile
 make_link .config/fontconfig/fonts.conf
+make_link .imwheelrc
