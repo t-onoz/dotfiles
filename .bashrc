@@ -14,9 +14,9 @@ export EDITOR=vim
 
 modsearch() {
   find /lib/modules/$(uname -r)/ -iname "*$1*.ko*"
-  if [[ "$(uname -r)" != "$(/bin/ls -1 /lib/modules/ | head -1)" ]]; then
-    echo "Did you reboot after updating your kernel?"
-  fi
+  # if [[ "$(uname -r)" != "$(/bin/ls -1 /lib/modules/ | head -1)" ]]; then
+  #   echo "Did you reboot after updating your kernel?"
+  # fi
 }
 
 # Reset
@@ -107,4 +107,8 @@ fi
 
 shopt -s checkwinsize
 
-export VISUAL="vim"
+if [ -n "$DISPLAY" ]; then
+    export VISUAL="code -n -w"
+else
+    export VISUAL="vim"
+fi
