@@ -15,23 +15,23 @@ git:
 
 shell: ${HOME}/.bashrc ${HOME}/.inputrc
 
-fcitx: ${HOME}/.config/environment.d/40-fcitx.conf
-	touch ${HOME}/.xprofile
-	sed -i -e '/export[[:space:]]*GTK_IM_MODULE=.*$$/d' \
-	    -e '/export[[:space:]]*QT_IM_MODULE=.*$$/d' \
-	    -e '/export[[:space:]]*XMODIFIERS=.*$$/d' \
-		${HOME}/.xprofile
-	echo "export GTK_IM_MODULE=fcitx" >> ${HOME}/.xprofile
-	echo "export QT_IM_MODULE=fcitx" >> ${HOME}/.xprofile
-	echo "export XMODIFIERS=@im=fcitx" >> ${HOME}/.xprofile
+fcitx:
+	touch ${HOME}/.pam_environment
+	sed -i -e '/GTK_IM_MODULE=.*$$/d' \
+	    -e '/QT_IM_MODULE=.*$$/d' \
+	    -e '/XMODIFIERS=.*$$/d' \
+		${HOME}/.pam_environment
+	echo "GTK_IM_MODULE=fcitx" >> ${HOME}/.pam_environment
+	echo "QT_IM_MODULE=fcitx" >> ${HOME}/.pam_environment
+	echo "XMODIFIERS=@im=fcitx" >> ${HOME}/.pam_environment
 
 lang:
-	touch ${HOME}/.xprofile
-	sed -i -e '/export[[:space:]]*LANG=.*$$/d' \
-		-e '/export[[:space:]]*LC_COLLATE=.*$$/d' \
-		${HOME}/.xprofile
-	echo "export LANG=ja_JP.UTF-8" >> ${HOME}/.xprofile
-	echo "export LC_COLLATE=en_US.UTF-8" >> ${HOME}/.xprofile
+	touch ${HOME}/.pam_environment
+	sed -i -e '/LANG=.*$$/d' \
+		-e '/LC_COLLATE=.*$$/d' \
+		${HOME}/.pam_environment
+	echo "LANG=ja_JP.UTF-8" >> ${HOME}/.pam_environment
+	echo "LC_COLLATE=en_US.UTF-8" >> ${HOME}/.pam_environment
 
 FORCE:
 ${HOME}/%: $(DOTFILES)/% FORCE

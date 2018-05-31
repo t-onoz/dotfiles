@@ -110,5 +110,6 @@ shopt -s checkwinsize
 if [ -n "$DISPLAY" ]; then
     export VISUAL="code -n -w"
 else
+    export LANG="en_US.UTF-8"
     export VISUAL="vim"
 fi
