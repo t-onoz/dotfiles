@@ -4,6 +4,6 @@ Exec=imwheel
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
-Name[ja_JP]=imwheel
+Name[ja_JP]=imwheel -b 45
 Comment[ja_JP]=
 X-GNOME-Autostart-Delay=0
