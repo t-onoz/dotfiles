@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Exec=imwheel
+Exec=imwheel -b 45
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
-Name[ja_JP]=imwheel -b 45
+Name[ja_JP]=imwheel
 Comment[ja_JP]=
 X-GNOME-Autostart-Delay=0
