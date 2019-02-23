@@ -113,3 +113,4 @@ else
     export LANG="en_US.UTF-8"
     export VISUAL="vim"
 fi
+export PYTHONPATH="$HOME/python/packages:$PYTHONPATH"
